@@ -15,8 +15,10 @@ app.use('/api/v1/post', postRoutes);
 app.use('/api/v1/neo', neoRoutes);
 
 app.get('/', async (req, res) => {
-    res.status(200).json({message : 'Hello from neo'});
-    // res.send('Hello from Neo!')
+    // res.status(200).json({'message' : 'Hello from neo'});
+    if (res.status(200)) {
+        res.send('Hello from Neo!')
+    }
 });
 
 const startServer = async () => {
